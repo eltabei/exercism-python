@@ -1,0 +1,17 @@
+class Allergies:
+    allergiesDict = { "eggs":1,
+                      "peanuts":2,
+                      "shellfish":4,
+                      "strawberries":8,
+                      "tomatoes":16,
+                      "chocolate":32,
+                      "pollen":64,
+                      "cats":128
+                    }
+
+    def __init__(self, n):
+        self.n = n
+        self.list = [food for food in allergiesDict if allergiesDict[food] <= n]
+
+    def is_allergic_to(self, food):
+        return self.n >= Allergies.allergiesDict[food]
